@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { ActiveLink } from "../active-link";
 
 export const Header = () => {
   return (
@@ -11,16 +12,18 @@ export const Header = () => {
       <div className="flex h-16 items-center justify-between">
         <Link href="/">Logo</Link>
         <nav className="flex items-center gap-6">
-          <Link href="/">Home</Link>
-          <Link href="/service">Service</Link>
-          <Link href="/feature">Feature</Link>
-          <Link href="/product">Product</Link>
-          <Link href="/testimonial">Testimonial</Link>
-          <Link href="/faq">FAQ</Link>
+          <ActiveLink href="/">Home</ActiveLink>
+          <ActiveLink href="/service">Service</ActiveLink>
+          <ActiveLink href="/feature">Feature</ActiveLink>
+          <ActiveLink href="/product">Product</ActiveLink>
+          <ActiveLink href="/testimonial">Testimonial</ActiveLink>
+          <ActiveLink href="/faq">FAQ</ActiveLink>
         </nav>
         <nav className="flex items-center gap-6">
         <Link href="/login" className="text-primary">Login</Link>
-        <Button>Sign up</Button>
+        <Button asChild>
+          <Link href="/signup">Sign up</Link>
+        </Button>
         </nav>
       </div>
       </div>
